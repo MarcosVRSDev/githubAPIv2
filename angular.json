@@ -24,7 +24,6 @@
               "src/assets"
             ],
             "styles": [
-              "styles/bootstrap-5.0.0-alpha1-dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
