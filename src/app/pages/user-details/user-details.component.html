@@ -1,0 +1,25 @@
+<div class="container main">
+  <div class="card text-center">
+    <div class="card-header text-center">
+     {{ user.login }}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ user.name }}</h5>
+      <p class="card-text">{{ user.bio }}</p>
+      <a href="{{ user.url }}" class="link-info">{{ user.url }}</a>
+    </div>
+    <div class="card-footer text-muted">
+      Criado em: {{ formatData(user.created_at) }}
+    </div>
+</div>
+
+<div class="container text-center main">
+  <ul class="list-group styled">
+    <li class="list-group-item"><h2>Repositórios</h2></li>
+    <li *ngFor="let repos of userRepos" class="list-group-item list-group-item-secondary">
+      <h5 class="mb-1">{{ repos.name }}</h5>
+      <p class="mb-1">{{ repos.description }}</p>
+        <small class="text-muted">{{ repos.html_url }}</small>
+    </li>
+  </ul>
+</div>
