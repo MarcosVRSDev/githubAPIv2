@@ -11,7 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserDetailsComponent implements OnInit {
   public user: User;
-  public userRepos: Repositorios[] = [];
+  public userRepos: Repositorios[];
+  public empty: boolean = true;
 
   constructor(
     private service: GitHubService,
@@ -29,9 +30,9 @@ export class UserDetailsComponent implements OnInit {
       this.service.getRepos(login)
         .subscribe((repos) => {
           this.userRepos = repos;
-        })
-
-
+          if(repos.length !== 0)
+            this.empty = false;
+        });
   }
 
   formatData(date: string) {

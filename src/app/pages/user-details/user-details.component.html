@@ -21,5 +21,10 @@
       <p class="mb-1">{{ repos.description }}</p>
         <small class="text-muted">{{ repos.html_url }}</small>
     </li>
+    <li *ngIf="empty" class="list-group-item list-group-item-secondary">
+      <br><br>
+      <h5> Não existem diretórios disponíveis </h5>
+      <br><br>
+    </li>
   </ul>
 </div>
